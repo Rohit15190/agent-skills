@@ -6,9 +6,12 @@ A personal library of [Agent Skills](https://www.anthropic.com/news/skills) — 
 
 | Skill | Trigger | What it does |
 |---|---|---|
+| [docx](skills/docx) | creating/editing `.docx`/`.dotx` files | Word document and template generation, editing, analysis |
 | [domain-modeling](skills/domain-modeling) | discussing terminology, `CONTEXT.md`, ADRs | Build and sharpen a project's domain model as you design |
 | [grill-with-docs](skills/grill-with-docs) | sharpening a plan/design | Interview-style grilling that also produces ADRs/glossary |
+| [grilling](skills/grilling) | stress-testing a plan/decision | Relentless round-by-round interview until nothing's left assumed |
 | [handoff](skills/handoff) | `/handoff` | Compact the conversation into a handoff doc for the next agent |
+| [improve-codebase-architecture](skills/improve-codebase-architecture) | looking for architecture improvements | Scans for deepening opportunities, reports them, then grills through the pick |
 | [writing-for-agents](skills/writing-for-agents) | writing/editing skills, `AGENTS.md`, `CLAUDE.md` | Reference for writing any document an agent consumes |
 | [ponytail](skills/ponytail) | `/ponytail`, "be lazy" | Forces the simplest solution that actually works |
 | [ponytail-review](skills/ponytail-review) | `/ponytail-review` | Diff review focused on over-engineering |
@@ -41,4 +44,10 @@ If you'd rather pin a specific version per project instead of a machine-wide lin
 
 ## Attribution
 
-The `ponytail*` family (`ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`) is vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), not original work — check that repo for its license before redistributing. Everything else in `skills/` is original. The repo's own [LICENSE](LICENSE) covers original content only.
+Not everything under `skills/` is original work, and the repo's own [LICENSE](LICENSE) (MIT) covers original content only:
+
+- The `ponytail*` family (`ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`) is vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) — check that repo for its license before redistributing.
+- `grilling` is vendored from [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grilling`), tracked in [skills-lock.json](skills-lock.json) with its source hash.
+- `docx` ships its own [LICENSE.txt](skills/docx/LICENSE.txt) (proprietary) — read it before reuse.
+
+Everything else in `skills/` is original.
