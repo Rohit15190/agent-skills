@@ -5,7 +5,11 @@ argument-hint: "What will the next session be used for?"
 disable-model-invocation: true
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work.
+
+If the current directory is inside a git repository, append a new dated section (newest on top) to `docs/handoff.md` at the repo root - create the file with a one-line "append-only, newest first" header comment if it doesn't exist yet, and never overwrite or delete earlier entries. This keeps the handoff log durable and versioned with the project instead of living only in Claude's app data, where it can be silently lost or overwritten by an unrelated later session.
+
+If there is no git repository (e.g. exploring a bare directory), fall back to the temporary directory of the user's OS instead, and say so explicitly in your response.
 
 Include a "suggested skills" section in the document, naming which skills the next agent should call the Skill tool for.
 
